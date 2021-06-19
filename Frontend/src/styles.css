@@ -1,0 +1,28 @@
+body{
+    background-color: #F0F0F0 !important;
+}
+
+/* @media (min-width: 1200px){
+    .container{
+        max-width: 1300px !important;
+    }
+} */
+
+.products-list{
+    background-color: #fff;
+}
+
+.tab-header{
+    height: 50px;
+    width: 100%;
+    background-color: rgba(13,214,184,0.3)
+}
+
+.tab-title{
+    font-weight: bold;
+    color: #666666;
+    font-size: 18px;
+    margin: 0.8rem 0 0.8rem 0.5rem;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

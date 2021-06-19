@@ -1,0 +1,14 @@
+<form [formGroup]="service.form">
+    <div>
+        <input type="hidden" formControlName="id">
+    <mat-form-field>
+        <input formControlName="name" matInput placeholder="Nhập tên danh mục">
+    </mat-form-field>
+    </div>
+    
+    <div>
+        <button class="btn btn-dangerous" (click)="onClose()">Hủy</button>
+        <button class="btn btn-success float-right" [disabled]="service.form.invalid" (click)="onSubmit()">Áp dụng</button>
+    </div>
+</form>
+

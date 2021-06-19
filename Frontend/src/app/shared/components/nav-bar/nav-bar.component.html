@@ -1,0 +1,43 @@
+<div class="nav-bar">
+    <div class="container p-0">
+      <div class="d-flex flex-column flex-md-row align-items-center">
+        <div class="col-2">
+          <h5 class="my-0 mr-md-auto font-weight-normal">
+            <img class="img-logo" src="/assets/img/logo.png" alt="logo">
+          </h5>
+        </div>
+        <div class="col-6">
+          <div class="form-search">
+            <input type="text" class="input-search" placeholder="Tìm kiếm sản phẩm mong muốn...">
+            <i class="fa fa-search btn button-search"></i>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="d-flex justify-content-end">
+            <div class="button-service" *ngIf="authService.isLoggedIn()">
+              <i class="fa fa-user-circle-o icon-service"></i>
+              <p class="text-service">{{authService.userInfo?.given_name}}</p>
+            </div>
+            <div class="button-service">
+              <i class="fa fa-shopping-cart icon-service"></i>
+              <p class="text-service">GIỎ HÀNG</p>
+            </div>
+            <div class="button-service" *ngIf="!authService.isLoggedIn()">
+              <i class="fa fa-sign-in icon-service"></i>
+              <a routerLink="/login" href=""><p class="text-service">ĐĂNG NHẬP</p></a>
+            </div>
+            <div class="button-service" *ngIf="!authService.isLoggedIn()">
+              <i class="fa fa-user-plus icon-service"></i>
+              <a routerLink="/register" href=""><p class="text-service">ĐĂNG KÝ</p></a>
+            </div>
+            <div class="button-service" *ngIf="authService.isLoggedIn()">
+              <i class="fa fa-sign-out icon-service"></i>
+              <a (click)="logout()"><p class="text-service">ĐĂNG XUẤT</p></a>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
+  
+  

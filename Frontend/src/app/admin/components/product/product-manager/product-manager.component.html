@@ -1,0 +1,72 @@
+<div class="p-3 content">
+    <mat-card class="table-data">
+        <button class="btn btn-success" (click)="onCreate()">Tạo</button>
+
+        <table mat-table [dataSource]="service.items">
+            <!-- Id Definition -->
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef> Mã </mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+            </ng-container>
+    
+            <!-- Name Definition -->
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Tên </mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+            </ng-container>
+
+            <!-- PictureUrl Definition -->
+            <ng-container matColumnDef="pictureUrl">
+                <mat-header-cell *matHeaderCellDef> Hình ảnh </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <img src="{{row.pictureUrl}}" class="picture">
+                </mat-cell>
+            </ng-container>
+
+            <!-- Price Definition -->
+            <ng-container matColumnDef="price">
+                <mat-header-cell *matHeaderCellDef> Giá </mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.price | currency: "VND"}}</mat-cell>
+            </ng-container>
+
+            <!-- Category Definition -->
+            <ng-container matColumnDef="category">
+                <mat-header-cell *matHeaderCellDef> Thể loại </mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.productType.name}}</mat-cell>
+            </ng-container>
+
+            <!-- Author Definition -->
+            <ng-container matColumnDef="author">
+                <mat-header-cell *matHeaderCellDef> Tác giả </mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.author}}</mat-cell>
+            </ng-container>
+
+            <!-- Publisher Definition -->
+            <ng-container matColumnDef="publisher">
+                <mat-header-cell *matHeaderCellDef> Nhà xuất bản </mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.publisher}}</mat-cell>
+            </ng-container>
+
+            <!-- Rating Definition -->
+            <ng-container matColumnDef="rating">
+                <mat-header-cell *matHeaderCellDef> Đánh giá </mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.rating}}</mat-cell>
+            </ng-container>
+    
+            <!-- Actions Definition -->
+            <ng-container matColumnDef="actions">
+                <mat-header-cell *matHeaderCellDef> Thao tác </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <a class="icon-action" (click)="onEdit(row.id)"><i class="fa fa-pencil-square"></i></a>
+                    <a class="icon-action" (click)="onDelete(row.id)"><i class="fa fa-trash"></i></a>
+                </mat-cell>
+            </ng-container>
+    
+            <!-- Header and Row Declarations -->
+            <mat-header-row *matHeaderRowDef="['id', 'name', 'price', 'category', 'author', 'publisher','actions']"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: ['id', 'name', 'price', 'category', 'author', 'publisher','actions']"></mat-row>
+        </table>
+    </mat-card>
+
+    
+</div>

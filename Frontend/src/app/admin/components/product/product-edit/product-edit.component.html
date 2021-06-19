@@ -1,0 +1,61 @@
+<form [formGroup]="service.form">
+    <div>
+        <input type="hidden" formControlName="id">
+        <mat-form-field [style.width.px]=200>
+            <input formControlName="name" matInput placeholder="Nhập tên sản phẩm">
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field [style.width.px]=100>
+            <input type="number" formControlName="price" matInput placeholder="Nhập giá">
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field [style.width.px]=400>
+            <input formControlName="pictureUrl" matInput placeholder="Nhập url hình">
+        </mat-form-field>
+    </div>
+    <img *ngIf="service.form.value.pictureUrl != ''" src="{{service.form.value.pictureUrl}}" class="poster">
+
+
+    <div class="mb-3">
+        <mat-label>Chọn thể loại</mat-label>
+        <mat-select matInput formControlName="productTypeId">
+            <mat-option *ngFor="let category of categoryService.categories" [value]="category.id">
+              {{category.name}}
+            </mat-option>
+        </mat-select>
+    </div>
+
+    <div>
+        <mat-form-field [style.width.px]=150>
+            <input type="number" formControlName="rating" matInput placeholder="Nhập đánh giá">
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field [style.width.px]=200>
+            <input formControlName="author" matInput placeholder="Nhập tên tác giả">
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field [style.width.px]=200>
+            <input formControlName="publisher" matInput placeholder="Nhập tên NXB">
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field [style.width.px]=400>
+            <textarea formControlName="description" matInput rows="4" placeholder="Nhập mô tả"></textarea>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <button class="btn btn-dangerous" (click)="onClose()">Hủy</button>
+        <button class="btn btn-success float-right" [disabled]="service.form.invalid" (click)="onSubmit()">Áp dụng</button>
+    </div>
+</form>
+

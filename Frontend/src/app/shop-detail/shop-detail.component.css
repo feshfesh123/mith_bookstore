@@ -1,0 +1,13 @@
+.product-essential{
+    display: flex;
+    background-color: #fff;
+    padding: 27px;
+}
+
+.product-essential-view{
+    width: 40%;
+}
+
+.product-essential-detail{
+    width: 60%;
+}
