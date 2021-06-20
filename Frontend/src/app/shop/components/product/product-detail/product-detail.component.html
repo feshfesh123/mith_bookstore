@@ -1,0 +1,41 @@
+<div class="product-detail">
+    <h1 class="product-title">{{product.name}}</h1>
+    <div class="product-info">
+        <!-- <div class="product-info-item">
+            <span>Nhà cung cấp:</span>
+            <span>IPM</span>
+        </div> -->
+        <div class="product-info-item">
+            <span>Tác giả:</span>
+            <span>{{product.author}}</span>
+        </div>
+        <div class="product-info-item">
+            <span>Nhà xuất bản:</span>
+            <span>NXB {{product.publisher}}</span>
+        </div>
+        <div class="product-info-item">
+            <span>Mô tả sản phẩm:</span>
+            </div>
+        <div class="product-info-item font-italic">
+            <span>{{product.description}}</span>
+        </div>
+    </div>
+    <div class="product-rating">
+        <span class="text-warning" *ngFor="let i of getRates()">
+            <i class="fa fa-star"></i>
+        </span>
+    </div>
+    <p class="product-price">{{product.price | currency: "VND"}}</p>
+    <div class="product-quantity d-flex text-center align-items-center">
+        <p class="label-qty">Số lượng:</p>
+        <div class="product-quantity-control">
+            <a (click)="onDes()" class="btn-subtract-qty">
+                <img style="width: 12px; height: auto;" src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_minus2x.png">
+            </a>
+            <input [(ngModel)]="quantity" type="text" maxvalue="999" align="center" class="input-text qty">
+            <a (click)="onInc()" class="btn-ađ-qty">
+                <img style="width: 12px; height: auto;" src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_plus2x.png">
+            </a>
+        </div>
+    </div>
+</div>

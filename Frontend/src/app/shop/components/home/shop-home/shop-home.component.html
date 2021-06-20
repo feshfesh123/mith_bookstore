@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-3 pl-0">
+      <app-category></app-category>
+    </div>
+    <div class="col-9 pr-0">
+      <app-poster></app-poster>
+    </div>
+    
+    <div class="col-12 products-list mt-4">
+      <div class="row">
+        <div class="col-12 tab-header d-flex align-items-center"><p class="tab-title mb-0">Sản Phẩm Hot</p></div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mt-4" *ngFor="let item of productService.items">
+            <app-product-item [product]=item></app-product-item>
+        </div>
+      </div>
+    </div>
+    
+    <div class="">
+        <!-- <app-cart></app-cart> -->
+    </div>
+</div>
+    

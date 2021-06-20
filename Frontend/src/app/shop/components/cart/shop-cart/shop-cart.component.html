@@ -1,0 +1,48 @@
+<div class="cart mt-4">
+    <div class="page-title title-buttons tab-header d-flex align-items-center">
+        <h1 class="tab-title mb-0 ml-2">Giỏ hàng</h1>
+    </div>
+
+    <div id="form-cart">
+        <input name="form_key" type="hidden" value="68jYHWkWOROFHPnM">
+        <div class="cart-ui-content row ">
+            <div class="col-sm-8 col-xs-12" *ngIf="cartService.items">
+                <div class="product-cart-left">
+                    <div *ngFor="let item of cartService.items">
+                        <app-cart-item [item]="item"></app-cart-item>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 hidden-max-width-992">
+                    <app-discount></app-discount>
+                    <div style="clear:both;"></div>
+                    <div class="block-total-cart">
+                        <div class="total-cart-page">
+                            <div class="title-cart-page-left">Thành tiền</div>
+                            <div class="number-cart-page-right"><span class="price">{{cartService.total | currency:"VND"}}</span></div>
+                        </div>
+                        <div class="border-product"></div>
+                        <div class="total-cart-page title-final-total">
+                            <div class="title-cart-page-left">
+                                Tổng Số Tiền (gồm VAT) </div>
+                            <div class="number-cart-page-right"><span class="price">{{cartService.total | currency:"VND"}}</span></div>
+                        </div>
+                        <div class="checkout-type-button-cart" style="text-align: center;">
+                            <div class="method-button-cart">
+                                <div class="mb-4">
+                                    <input [(ngModel)]="address" type="text" placeholder="Nhập địa chỉ">
+                                </div>
+                                <button type="button" title="Thanh toán"
+                                    class="button btn-proceed-checkout btn-checkout" (click)="onCheckout()">
+                                    <span>
+                                        <span>Thanh toán</span>
+                                    </span>
+                                </button>
+                                <div class="fhs-no-checkout" style="display:none;"></div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

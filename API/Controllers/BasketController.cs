@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using API.Dtos;
 using AutoMapper;
 using Core.Entities;
+using Core.Entities.OrderAggregate;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,25 +18,36 @@ namespace API.Controllers
             _basketRepository = basketRepository;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<ActionResult<CustomerBasket>> GetBasketById(string id)
         {
             var basket = await _basketRepository.GetBasketAsync(id);
+            if (basket == null)
+            {
+
+            }
             return Ok(basket ?? new CustomerBasket(id));
         }
 
-        [HttpPost]
-        public async Task<ActionResult<CustomerBasket>> UpdateBasketAsync(CustomerBasketDto basketDto)
+        [HttpPost("{basketId}")]
+        public async Task<ActionResult<CustomerBasket>> UpdateBasketItemAsync(string basketId, [FromBody] BasketItem item)
         {
-            var basket = _mapper.Map<CustomerBasketDto, CustomerBasket>(basketDto);
-            var updatedBasket = await _basketRepository.UpdateBasketAsync(basket);
+            var updatedBasket = await _basketRepository.UpdateBasketItemAsync(basketId, item);
             return Ok(updatedBasket);
         }
 
-        [HttpDelete]
-        public async Task DeleteBasketAsync(string id)
+        [HttpDelete("{basketId}")]
+        public async Task<ActionResult<CustomerBasket>> DeleteBasketItemAsync(string basketId, [FromBody] BasketItem item)
         {
-            await _basketRepository.DeleteBasketAsync(id);
+            var deletedBasket = await _basketRepository.DeleteBasketItemAsync(basketId, item.Id);
+            return Ok(deletedBasket);
+        }
+
+        [HttpDelete("{basketId}/clean")]
+        public async Task<ActionResult<bool>> DeleteBasketAsync(string basketId)
+        {
+            var deletedBasket = await _basketRepository.DeleteBasketAsync(basketId);
+            return Ok(deletedBasket);
         }
     }
 }

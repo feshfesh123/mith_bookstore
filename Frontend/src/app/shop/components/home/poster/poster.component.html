@@ -1,0 +1,7 @@
+<ngb-carousel>
+    <ng-template ngbSlide *ngFor="let item of service.posters">
+      <div class="picsum-img-wrapper">
+        <img src="{{item.imageUrl}}" alt="poster image">
+      </div>
+    </ng-template>
+</ngb-carousel>

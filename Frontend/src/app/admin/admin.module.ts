@@ -13,6 +13,10 @@ import { PosterEditComponent } from './components/poster/poster-edit/poster-edit
 import { ProductManagerComponent } from './components/product/product-manager/product-manager.component';
 import { ProductEditComponent } from './components/product/product-edit/product-edit.component';
 import { MatSelectModule } from '@angular/material/select';
+import { DiscountManagerComponent } from './components/discount/discount-manager/discount-manager.component';
+import { DiscountEditComponent } from './components/discount/discount-edit/discount-edit.component';
+import { OrderManagerComponent } from './components/order/order-manager/order-manager.component';
+import { OrderEditComponent } from './components/order/order-edit/order-edit.component';
 @NgModule({
   declarations: [
     CategoryManagerComponent,
@@ -20,7 +24,11 @@ import { MatSelectModule } from '@angular/material/select';
     PosterManagerComponent,
     PosterEditComponent,
     ProductManagerComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    DiscountManagerComponent,
+    DiscountEditComponent,
+    OrderManagerComponent,
+    OrderEditComponent
   ],
   imports: [
     CommonModule,

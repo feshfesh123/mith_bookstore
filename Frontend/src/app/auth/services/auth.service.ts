@@ -12,7 +12,9 @@ export class AuthService {
   private baseUrl = environment.baseUrl;
   helper = new JwtHelperService();
   userInfo : any;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.decodeToken();
+  }
 
   login(values: any){
     return this.http.post(this.baseUrl + 'account/login', values).pipe(

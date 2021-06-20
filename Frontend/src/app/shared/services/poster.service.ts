@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { isObservable } from 'rxjs';
 import { Poster } from 'src/app/models/poster';
 import { environment } from 'src/environments/environment';
 

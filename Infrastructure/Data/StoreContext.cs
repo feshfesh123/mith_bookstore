@@ -21,6 +21,9 @@ namespace Infrastructure.Data
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
         public DbSet<Poster> Posters { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
+        public DbSet<CustomerBasket> CustomerBasket { get; set; }
+        public DbSet<Discount> Discounts { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

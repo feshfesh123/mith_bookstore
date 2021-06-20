@@ -11,6 +11,7 @@ export class ProductService {
   form: FormGroup;
   url: string = environment.baseUrl + 'products/manager';
   items : Product[] = [];
+  relatedItems : Product[] = [];
 
   constructor(private http: HttpClient) {
     this.initializeForm();
@@ -48,8 +49,6 @@ export class ProductService {
 
   createOrUpdateItem(){
     if (this.form.value.id == 0) {
-      console.log('call API');
-      console.log(this.form.value);
       return this.http.post(this.url, this.form.value);
     }
     return this.http.post(this.url + '/' + this.form.value.id.toString(), this.form.value);
@@ -59,6 +58,17 @@ export class ProductService {
     return this.http.get<Product[]>(this.url).subscribe(
       (res) => {
         this.items = res;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  getRelatedItems(categoryId : number){
+    return this.http.get<Product[]>(this.url + '/related/' + categoryId.toString()).subscribe(
+      (res) => {
+        this.relatedItems = res;
       },
       (err) => {
         console.log(err);

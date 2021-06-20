@@ -15,14 +15,12 @@ body{
 .tab-header{
     height: 50px;
     width: 100%;
-    background-color: rgba(13,214,184,0.3)
+    background-color: #0dd6b8;
 }
 
 .tab-title{
-    font-weight: bold;
-    color: #666666;
-    font-size: 18px;
-    margin: 0.8rem 0 0.8rem 0.5rem;
+    color: #fff;
+    font-size: 20px;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

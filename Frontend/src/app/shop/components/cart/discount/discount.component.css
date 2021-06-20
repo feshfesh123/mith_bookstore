@@ -1,0 +1,35 @@
+.discount-title{
+    border-bottom: 1px solid #ededed;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    color: #2F80ED;
+    font-weight: 600;
+}
+
+.block{
+    margin-bottom: 30px;
+    position: relative;
+    background: white;
+    padding: 10px;
+}
+
+.discount-item{
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    border-bottom: 1px solid #ededed;
+}
+
+p.desc{
+    font-size: 0.9em;
+    color: #999999;
+}
+
+p.name{
+    margin-bottom: 2px;
+}
+
+.btn.btn-success{
+    background-color: #2F80ED;
+    border-color: #2F80ED;
+}

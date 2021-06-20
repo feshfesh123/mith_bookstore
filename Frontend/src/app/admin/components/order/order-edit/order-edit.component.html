@@ -1,0 +1,29 @@
+<p>Email người mua :</p>
+<p>{{service.selectedOrder.buyerEmail}}</p>
+
+<p>Địa chỉ đặt hàng :</p>
+<p>{{service.selectedOrder.shipToAddress}}</p>
+
+<p>Tổng tiền :</p>
+<p>{{service.selectedOrder.total | currency: "VND"}}</p>
+
+<p>Trạng thái :</p>
+<p>{{service.selectedOrder.status}}</p>
+
+<p>Ngày đặt hàng :</p>
+<p>{{service.selectedOrder.orderDate}}</p>
+
+<p>Chi tiết đơn hàng :</p>
+<div *ngFor="let item of service.selectedOrder.orderItems">
+    <p>Tên sản phẩm :</p>
+    <p>{{item.productName}}</p>
+
+    <p>Hình ảnh :</p>
+    <img src="{{item.pictureUrl}}" class="poster">
+
+    <p>Đơn giá :</p>
+    <p>{{item.price | currency: "VND"}}</p>
+
+    <p>Số lượng :</p>
+    <p>{{item.quantity}}</p>
+</div>

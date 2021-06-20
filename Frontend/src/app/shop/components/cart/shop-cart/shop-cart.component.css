@@ -1,0 +1,240 @@
+.product-cart-left {
+    height: 100%;
+}
+
+.item-product-cart {
+    background: white;
+    display: flex;
+}
+
+.item-product-cart .div-of-btn-remove-cart {
+    flex-basis: 8%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn-remove-desktop-cart {
+    width: 100%;
+    height: 20%;
+    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/checkout_cart/ico_xcircle.png) 0 0 no-repeat;
+    background-position: center;
+}
+
+.item-product-cart .img-product-cart {
+    padding: 15px 10px 15px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.group-product-info {
+    width: 75%;
+    display: flex;
+}
+
+.group-product-info .info-product-cart {
+    width: 72%;
+    padding-top: 15px;
+}
+
+.product-name-full-text {
+    margin: 0;
+    font-weight: normal;
+    line-height: 18px;
+    display: inline-block;
+    width: 100%;
+}
+
+.product-name-full-text a {
+    color: #333333;
+    font-weight: normal;
+    font-size: 0.75em;
+    display: block;
+    padding-top: 5px;
+    height: inherit;
+}
+
+.price-original {
+    padding: 10px 0;
+}
+
+.price-original .cart-price .price {
+    color: #333;
+    font-weight: 650;
+    font-size: 15px;
+}
+
+.group-product-info .number-product-cart {
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.product-view-quantity-box {
+    padding: 0px 30px 15px 30px;
+}
+
+.product-view-quantity-box-block {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    border: 1px solid #E0E0E0E0;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.product-view-quantity-box-block a {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+}
+
+.product-view-quantity-box-block .qty-carts {
+    border: none !important;
+    flex: 0.7;
+    width: 1em !important;
+    font-weight: 650;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+input.qty-carts {
+    height: unset!important;
+}
+
+.qty-carts {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.button, input {
+    height: 39px;
+    line-height: 1.42857;
+}
+
+input, select, textarea, button {
+    font-size: 12px;
+    color: #545759;
+    background-color: white;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.number-product-cart .cart-price-total {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-price-total .text-price-total {
+    font-size: 1.1em;
+}
+
+.cart-price-total .cart-price .price {
+    color: #F7941E;
+    font-size: 15px;
+}
+
+.block-total-cart {
+    background: white;
+}
+
+.total-cart-page {
+    display: flex;
+    font-size: 1.1em;
+    padding: 10px 15px;
+}
+
+.title-cart-page-left {
+    flex-basis: 70%;
+}
+
+.number-cart-page-right {
+    flex-basis: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.border-product {
+    width: 95%;
+    margin: auto;
+    border-bottom-width: 1px;
+    border-bottom-color: #ededed;
+    border-bottom-style: solid;
+}
+
+.title-final-total {
+    font-weight: 650;
+    font-size: 1.1em;
+}
+
+.total-cart-page {
+    display: flex;
+    font-size: 1.1em;
+    padding: 10px 15px;
+}
+
+.title-cart-page-left {
+    flex-basis: 70%;
+}
+
+.number-cart-page-right {
+    flex-basis: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.title-final-total .number-cart-page-right .price {
+    color: #F7941E;
+    font-size: 1.5em;
+}
+
+.method-button-cart {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.checkout-type-button-cart button {
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    border: none;
+    background-color: #0dd6b8;
+    color: white;
+    border-radius: 30px;
+
+}
+
+.checkout-type-button-cart button span {
+    font-size: 18px;
+    color: white !important;
+    padding: 10px 20px;
+}

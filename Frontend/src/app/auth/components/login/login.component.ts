@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     this.progressBar.startLoading();
     this.authService.login(this.loginForm.value).subscribe(
       () => {
-        this.router.navigateByUrl('/shop-home');
+        this.router.navigateByUrl('/');
         this.progressBar.completeSuccessLoading('Đăng nhập thành công');
       },
       (err) => {

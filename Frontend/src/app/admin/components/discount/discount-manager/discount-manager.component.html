@@ -1,0 +1,31 @@
+<div class="p-3 content">
+    <mat-card class="table-data">
+        <button class="btn btn-success" (click)="onCreate()">Tạo</button>
+        <table mat-table [dataSource]="service.categories">
+            <!-- Id Definition -->
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+            </ng-container>
+
+            <!-- Name Definition -->
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Tên </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Actions Definition -->
+            <ng-container matColumnDef="actions">
+                <mat-header-cell *matHeaderCellDef> Thao tác </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <a (click)="onEdit(row.id)" class="icon-action"><i class="fa fa-pencil-square"></i></a>
+                    <a (click)="onDelete(row.id)"class="icon-action"><i class="fa fa-trash"></i></a>
+                </mat-cell>
+            </ng-container>
+
+            <!-- Header and Row Declarations -->
+            <mat-header-row *matHeaderRowDef="['id', 'name', 'actions']"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: ['id', 'name', 'actions']"></mat-row>
+        </table>
+    </mat-card>
+</div>

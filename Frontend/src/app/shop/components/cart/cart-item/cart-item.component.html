@@ -1,0 +1,44 @@
+<div class="item-product-cart">
+    <div class="div-of-btn-remove-cart">
+        <a (click)="onRemove()" title="Xóa sản phẩm" class="btn-remove-desktop-cart focus"></a>
+    </div>
+    <div class="img-product-cart">
+        <a class="product-image"><img
+            src="{{item.pictureUrl}}"
+            width="150px" height="150px" alt=""></a>
+    </div>
+    <div class="group-product-info">
+        <div class="info-product-cart">
+            <h2 class="product-name-full-text">
+                <a>{{item.productName}}</a>
+            </h2>
+            <div class="price-original">
+                <span class="cart-price">
+                    <div class="cart-fhsItem-price">
+                        <div><span class="price">{{item.price | currency: "VND"}}</span></div>
+                    </div>
+                </span>
+            </div>
+        </div>
+        <div class="number-product-cart">
+            <div class="product-view-quantity-box">
+                <div class="product-view-quantity-box-block">
+                    <a class="btn-subtract-qty" (click)="onDesc()"><img
+                            style="width: 12px; height: auto;vertical-align: middle;"
+                            src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_minus2x.png"></a>
+                    <input type="text" class="qty-carts" maxlength="12" align="center" value="{{item.quantity}}" title="Số lượng">
+                    <a class="btn-add-qty" (click)="onInc()"><img
+                        style="width: 12px; height: auto;vertical-align: middle;"
+                        src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_plus2x.png"></a>
+                </div>
+            </div>
+            <div class="cart-price-total">
+                <span class="text-price-total">Thành Tiền</span>
+                <span class="cart-price">
+                    <span class="price">{{item.price * item.quantity | currency: "VND"}}</span> 
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="border-product"></div>

@@ -1,0 +1,21 @@
+<div class="mt-4">
+    <div class="product-essential">
+        <div class="product-essential-view">
+            <app-product-view [imageUrl]="product.pictureUrl" *ngIf="product"></app-product-view>
+        </div>
+        <div class="product-essential-detail" *ngIf="product">
+            <app-product-detail [product]="product"></app-product-detail>
+        </div>
+    </div>
+    
+    <div class="product-related">
+        <div class="products-list mt-4">
+            <div class="tab-header d-flex align-items-center"><p class="tab-title mb-0 ml-4">Sản Phẩm Liên Quan</p></div>
+            <div class="row">
+              <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mt-4" *ngFor="let item of productService.relatedItems.slice(0, 8)">
+                  <app-product-item [product]=item></app-product-item>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

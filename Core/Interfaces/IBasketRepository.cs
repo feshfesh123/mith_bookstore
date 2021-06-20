@@ -6,7 +6,8 @@ namespace Core.Interfaces
     public interface IBasketRepository
     {
         Task<CustomerBasket> GetBasketAsync(string basketId);
-        Task<CustomerBasket> UpdateBasketAsync(CustomerBasket basket);
+        Task<CustomerBasket> UpdateBasketItemAsync(string basketId, BasketItem item);
+        Task<CustomerBasket> DeleteBasketItemAsync(string basketId, int itemId);
         Task<bool> DeleteBasketAsync(string basketId);
     }
 }

@@ -75,6 +75,12 @@ namespace API.Controllers
             return Ok(await _productRepo.GetProductsAsync());
         }
 
+        [HttpGet("manager/related/{categoryId}")]
+        public async Task<ActionResult<IReadOnlyList<Product>>> GetByCategoryId(int categoryId)
+        {
+            return Ok(await _productRepo.GetProductsByCategoryIdAsync(categoryId));
+        }
+
         [HttpGet("manager/{id}")]
         public async Task<ActionResult<IReadOnlyList<Product>>> GetById(int id)
         {
@@ -100,6 +106,8 @@ namespace API.Controllers
             entity.Rating = item.Rating;
             entity.PictureUrl = item.PictureUrl;
             entity.AvailableQuantity = item.AvailableQuantity;
+            entity.Author = item.Author;
+            entity.Publisher = item.Publisher;
 
             _productGenericRepo.Update(entity);
             return Ok();
@@ -112,5 +120,7 @@ namespace API.Controllers
             _productGenericRepo.Delete(entity);
             return Ok();
         }
+
+
     }
 }

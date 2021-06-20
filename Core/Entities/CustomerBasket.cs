@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Core.Entities
 {
-    public class CustomerBasket
+    public class CustomerBasket : BaseEntity
     {
         public CustomerBasket()
         {
@@ -10,10 +10,10 @@ namespace Core.Entities
 
         public CustomerBasket(string id)
         {
-            Id = id;
+            UserId = id;
         }
 
-        public string Id { get; set; }
+        public string UserId { get; set; }
         public List<BasketItem> Items { get; set; } = new List<BasketItem>();
     }
 }

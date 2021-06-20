@@ -3,7 +3,9 @@
       <div class="d-flex flex-column flex-md-row align-items-center">
         <div class="col-2">
           <h5 class="my-0 mr-md-auto font-weight-normal">
+            <a href="/">
             <img class="img-logo" src="/assets/img/logo.png" alt="logo">
+            </a>
           </h5>
         </div>
         <div class="col-6">
@@ -18,17 +20,25 @@
               <i class="fa fa-user-circle-o icon-service"></i>
               <p class="text-service">{{authService.userInfo?.given_name}}</p>
             </div>
+            <div class="button-service" *ngIf="authService.isLoggedIn() && authService.userInfo.email == 'admin@gmail.com'">
+              <i class="fa fa-cog icon-service"></i>
+              <a routerLink="/admin/category-manager"><p class="text-service">QUẢN LÝ</p></a>
+            </div>
+            <div class="button-service">
+              <i class="fa fa-bookmark-o icon-service"></i>
+              <a routerLink="/order"><p class="text-service">ĐƠN HÀNG</p></a>
+            </div>
             <div class="button-service">
               <i class="fa fa-shopping-cart icon-service"></i>
-              <p class="text-service">GIỎ HÀNG</p>
+              <a routerLink="/cart"><p class="text-service">GIỎ HÀNG</p></a>
             </div>
             <div class="button-service" *ngIf="!authService.isLoggedIn()">
               <i class="fa fa-sign-in icon-service"></i>
-              <a routerLink="/login" href=""><p class="text-service">ĐĂNG NHẬP</p></a>
+              <a routerLink="/login"><p class="text-service">ĐĂNG NHẬP</p></a>
             </div>
             <div class="button-service" *ngIf="!authService.isLoggedIn()">
               <i class="fa fa-user-plus icon-service"></i>
-              <a routerLink="/register" href=""><p class="text-service">ĐĂNG KÝ</p></a>
+              <a routerLink="/register"><p class="text-service">ĐĂNG KÝ</p></a>
             </div>
             <div class="button-service" *ngIf="authService.isLoggedIn()">
               <i class="fa fa-sign-out icon-service"></i>
